@@ -1,0 +1,2 @@
+eval "$(ssh-agent -s)"
+gpg -r Todin -qd ~/.ssh/id_ed25519.gpg | ssh-add -

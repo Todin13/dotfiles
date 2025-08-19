@@ -1,0 +1,16 @@
+[user]
+    name = ODIN Thomas 
+    email = thomasodin13@gmail.com
+    username = todin
+[core]
+    editor = nvim
+[init]
+    defaultBranch = master
+[checkout]
+    defaultRemote = origin
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+[url "ssh://git@gitlab.com/"]
+    insteadOf = https://gitlab.com/
+[commit]
+    gpgSign = true

@@ -1,0 +1,70 @@
+@import "~/.cache/wal/colors-rofi-light.rasi"
+@import "base.rasi"
+
+configuration {
+    modi: "drun";
+    show-icons: true;
+    drun-display-format: "{name}";
+}
+
+* {
+    font: "Iosevka Nerd Font 10";
+}
+
+window {
+    location: center;
+    anchor: center;
+    fullscreen: false;
+    width: 1000px;
+    border-radius: 10px;
+    padding: 20px;
+    x-offset: 0px;
+    y-offset: 0px;
+}
+
+mainbox {
+    children: [ "listview" ];
+    spacing: 10px;
+    padding: 20px;
+}
+
+listview {
+    columns: 5;
+    lines: 3;
+    fixed-columns: true;
+    fixed-height: true;
+    spacing: 30px;
+    layout: vertical;
+    scrollbar: false;
+}
+
+element {
+    padding: 20px;
+    border: 0px solid;
+    cursor: pointer;
+
+    vertical-align: 0.5;   /* vertically center content */
+    horizontal-align: 0.5; /* horizontally center content */
+}
+
+element-icon {
+    size: 96px;
+    cursor: inherit;
+
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+element normal.active {
+    border: 2px solid;
+}
+element selected.normal {
+    border: 2px solid;
+}
+element selected.active {
+    border: 2px solid;
+}
+
+element-text {
+    font: "Iosevka Nerd Font 0";  // hides text
+}

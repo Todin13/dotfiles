@@ -1,0 +1,36 @@
+.
+├── init.lua
+├── lazy-lock.json
+└── lua
+    ├── config
+    │   ├── general.lua
+    │   └── lazy.lua
+    ├── core
+    │   ├── debugprint.lua
+    │   ├── diffview.lua
+    │   ├── mason.lua
+    │   ├── nvim-cmp.lua
+    │   ├── nvim-dap.lua
+    │   ├── nvim-hop.lua
+    │   ├── telescope.lua
+    │   └── vim-fugitive.lua
+    ├── lsp
+    │   ├── markdown-preview.lua
+    │   ├── nvim-lspconfig.lua
+    │   └── vim-markdow.lua
+    ├── ui
+    │   ├── dashbooard.lua
+    │   ├── lualine.lua
+    │   ├── nvim-autopairs.lua
+    │   ├── nvim-noice.lua
+    │   ├── nvim-tree.lua
+    │   ├── nvim-treesitter.lua
+    │   ├── nvim-ufo.lua
+    │   ├── statuscol.lua
+    │   ├── todo-comments.lua
+    │   ├── vim-commentary.lua
+    │   └── whichkey.lua
+    └── utils
+        ├── persistence.lua
+        ├── plenary.lua
+        └── snacks.lua

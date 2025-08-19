@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Target directory
+DIR="$HOME/.config/script/screenlayout/layout"
+
+# Get all files in the directory
+SCRIPTS=$(find "$DIR" -maxdepth 1 -type f -exec basename {} \;)
+
+# Show the list in rofi
+CHOSEN=$(echo "$SCRIPTS" | rofi -dmenu -p "Choose layout")
+
+# Exit if nothing selected
+[ -z "$CHOSEN" ] && exit
+
+# Run the selected file
+"$DIR/$CHOSEN"

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+ROFI_THEME="$HOME/.config/rofi/image_grid.rasi"
+
+TMP_LIST=$(mktemp)
+
+# Build list: label is the basename, icon is the full image
+while IFS= read -r -d '' img; do
+    label="$(basename "$img")"
+    echo -en "$label\x00icon\x1f$img\n" >> "$TMP_LIST"
+done < <(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) -print0)
+
+# Show rofi menu
+SELECTED=$(rofi -dmenu -theme "$ROFI_THEME" -p " " -markup-rows -show-icons < "$TMP_LIST")
+
+rm "$TMP_LIST"
+
+# If selection is made
+if [[ -n "$SELECTED" ]]; then
+    # Match selected label to full path
+    MATCHED_PATH=$(find "$WALLPAPER_DIR" -type f -name "$SELECTED" | head -n 1)
+
+    if [[ -n "$MATCHED_PATH" ]]; then
+        # Set wallpaper with pywal
+        wal -i "$MATCHED_PATH"
+
+        echo "Wallpaper set and i3 reloaded: $MATCHED_PATH"
+    else
+        echo "Error: File not found for selected label: $SELECTED"
+    fi
+else
+    echo "No selection made."
+fi
+

@@ -1,0 +1,16 @@
+include /home/todin/.cache/wal/colors-kitty.conf
+
+# Font
+font_familly 		FiraCode Nerd Font
+bold_font 		auto
+italic_font		auto
+bold_italic_font	auto
+
+font_size 12.0
+
+# Bell
+enable_audio_bell no
+
+# Background
+background_opacity 0.7
+background_blur 4
